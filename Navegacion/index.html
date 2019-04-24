@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Hotel Cometa</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/style.css">
 
+  <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet"> 
+
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -23,17 +25,44 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
   <header>
-    <nav>
-      <ul>
-        <li><a>Inicio</a></li>
-        <li><a>Costos</a></li>
-        <li><a>Cuartos</a></li>
-        <li><a>Contacto y Reservaciones</a></li>
-        <li><a>Contacto y Reservaciones</li>
-        <li><a>Buffet</a></li>
-      </ul>
-    </nav>
+    <!-- INICIO LOGO-->
+  <div id="logo">
+      <h1>
+        <img src="img/logo_cometa.png" alt="Logo del Hotel"/>
+      </h1>
+    </div>
+    <!-- FIN LOGO-->
+    <div id="navigation">
+      <nav class="callig">
+        <ul>
+          <li><a>Inicio</a></li>
+          <li><a>Costos</a></li>
+          <li><a>Cuartos</a></li>
+          <li><a>Contacto y Reservaciones</li>
+          <li><a>Buffet</a></li>
+        </ul>
+      </nav>
+  </div>
   </header>
+
+  <!--SLIDER-->
+  <div class="slider_container fullScreen">
+    <div class="slideContainer">
+      <div class="slide fullScreen">s1</div>
+      <div class="slide fullScreen">s2</div>
+      <div class="slide fullScreen">s3</div>
+      <div class="slide fullScreen">s4</div>
+    </div>
+  </div>
+  <div class="fullScreen"></div>
+  <nav class="slider_controls">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </nav>
+  <!--SLIDER-->
+
   <!--Carga de Javascript -->
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
