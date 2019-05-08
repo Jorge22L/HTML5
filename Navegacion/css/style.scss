@@ -1,3 +1,41 @@
+// ciclo para fuentes
+@each $font-face in 'Socialico' 
+{
+    @font-face 
+    {
+        font-family: $font-face;
+        font-style: normal;
+        font-weight: normal;
+        src: url('../fonts/#{$font-face}.eot');
+        src: url('../fonts/#{$font-face}.otf');
+        src: url('../fonts/#{$font-face}.tff');
+    }    
+}
+// fin ciclo para fuentes
+@mixin efectoEncabezado($grados, $color :'red') 
+{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top:0;
+    height: 100%;
+    width: 50%;
+    background:unquote($color);
+    -webkit-transform: skew(0deg, unquote($grados + 'deg'));
+    -moz-transform: skew(0deg, unquote($grados + 'deg'));
+}
+.callig
+{
+    font-family: 'Calligraffitti', cursive;
+}
+
+.fullScreen
+{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
 html, body
 {
     height: 100%;
@@ -10,41 +48,75 @@ header
 {
     position: fixed;
     width: 100%;
+    top: -9em;
+    text-align: center;
+    transition: all 0.4s;
     
+    &:hover
+    {
+        top: -7em;
+    }
     &:before
     {
-        content:"";
-        position: absolute;
-        z-index: -1;
-        top:0;
-        height: 100%;
-        width: 50%;
-        background: rgba(0, 0, 0, 0.8);
         left: 0;
-        -webkit-transform: skew(0deg,5deg);
-        -moz-transform: skew(0deg,5deg);
-        transform: skew(0deg,5deg);
+        @include efectoEncabezado(5,'#000');
     }
     &:after
     {
-        content:"";
-        position: absolute;
-        z-index: -1;
-        top:0;
-        height: 100%;
-        width: 50%;
-        background: rgba(0, 0, 0, 0.8);
         right: 0;
-        -webkit-transform: skew(0deg,-5deg);
-        -moz-transform: skew(0deg,-5deg);
-        transform: skew(0deg,-5deg);
+        @include efectoEncabezado(-5,'#000');
     }
     nav ul
     {
         margin: 0;
+        color:#f7f7f7;
+        font-weight: bold;
+        padding-bottom: 1em;
         li
         {
+            padding: 0 10px;
             display: inline-block;
+        }
+    }
+    #logo
+    {
+        background-color: #000;
+        position: relative;
+        width: 15%;
+        text-align: center;
+        min-width: 100px;
+        max-width: 100%;
+        height: 100px;
+        left: 43%;
+        top: 140px;
+        z-index: 5;
+        border-radius: 5em 0;
+        img
+        {
+            margin-top: -20px;
+            width: 100px;
+        }
+    }
+}
+
+.slider_container
+{
+    position: fixed;
+    overflow: hidden;    
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-color: #000;
+
+    .slideContainer
+    {
+        white-space: nowrap;
+        height: 100%;
+        .slide
+        {
+            display: inline-block;
+            background-color: #fff;
+            margin-right: -4px;
         }
     }
 }
