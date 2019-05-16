@@ -1,0 +1,29 @@
+var ctx,canvas;
+var x=0,y=0,v_x=10,v_y=10;
+window.addEventListener('load',init);
+window.requestAnimationFrame = (function(){
+	return window.requestAnimationFrame ||
+	window.webkitRequestAnimationFrame ||
+	window.mozRequestAnimationFrane ||
+	function(f){
+		window.setTimeout(f,1000/60);
+	}
+})();
+function init(){
+	canvas = document.getElementById('c');
+	ctx = canvas.getContext('2d');
+	draw();
+}
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.beginPath();
+	ctx.arc(x,y,50,0,Math.PI*2);
+	ctx.closePath();
+	ctx.fill();
+	x += v_x;
+	y += v_y;
+	if(x < 0 || x > canvas.width) v_x = -v_x;
+	if(y < 0 || y > canvas.height) v_y = -v_y;
+	requestAnimationFrame(draw);
+}
+		
